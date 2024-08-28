@@ -1,0 +1,65 @@
+#Add the desired entrypoints to the INPUT list
+INPUT:
+  [
+    "$_SERVER",
+    "$_GET",
+    "$_POST",
+    "$_FILES",
+    "$_REQUEST",
+    "$_SESSION",
+    "$_ENV",
+    "$_COOKIE",
+    "$php_errormsg",
+    "$http_response_header",
+  ]
+
+#Sanitization functions for both XSS and SQLi
+SANS:
+  [
+    "intval",
+    "floatval",
+  ]
+
+#Vulnerabilities
+VULNS:
+  [
+    {
+      name: XSS,
+      sensitive_sinks: ["echo"],
+      sanitization_functions:
+        [
+          "encodeForHTML",
+          "htmlentities",
+          "htmlspecialchars",
+          "strip_tags",
+          "urlencode",
+          "rawurlencode",
+        ],
+    },
+
+    {
+      name: SQLi,
+      sensitive_sinks:
+        [
+          "mysql_query",
+          "mysql_unbuffered_query",
+          "mysql_db_query",
+          "mysqli_query",
+          "mysqli_real_query",
+          "mysqli_master_query",
+          "mysqli_multi_query",
+          "mysqli_stmt_execute",
+          "mysqli_execute",
+        ],
+      sanitization_functions:
+        [
+          "mysql_escape_string",
+          "mysql_real_escape_string",
+          "mysqli_escape_string",
+          "mysqli_real_escape_string",
+          "mysqli_stmt_bind_param",
+          "md5",
+        ]
+    },
+
+  ]
