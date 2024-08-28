@@ -1,0 +1,13 @@
+digraph "functions.php" {
+rankdir=LR;
+fontsize=8;
+node [ shape = polygon, sides = 4 ];
+"_main" [color=lightblue2,style=filled];
+"init" [color=lightblue2,style=filled];
+"DB_Connect" [color=lightblue2,style=filled];
+"DB_Close" [color=lightblue2,style=filled];
+"datediff" [color=lightblue2,style=filled];
+/* not repeating datediff -> floor */
+/* not repeating datediff -> sprintf */
+/* not repeating datediff -> floor */
+}
