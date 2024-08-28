@@ -1,0 +1,9 @@
+digraph "login.php" {
+rankdir=LR;
+fontsize=8;
+node [ shape = polygon, sides = 4 ];
+"_main" [color=lightblue2,style=filled];
+/* not repeating _main -> mysql_query */
+/* not repeating _main -> md5 */
+/* not repeating _main -> header */
+}

@@ -1,0 +1,10 @@
+digraph "index.php" {
+rankdir=LR;
+fontsize=8;
+node [ shape = polygon, sides = 4 ];
+"_main" [color=lightblue2,style=filled];
+/* not repeating _main -> header */
+/* not repeating _main -> header */
+/* not repeating _main -> header */
+/* not repeating _main -> header */
+}
