@@ -1,4 +1,5 @@
 # CoCoA
+COnfidential deteCtiOn vulnerAbilities
 
 CoCoA is a tool capable of protecting code through encryption in a compact data structure while also  being able to perform static analysis over that encrypted code. 
 
